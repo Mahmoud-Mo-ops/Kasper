@@ -220,7 +220,7 @@ header nav .form i {
     padding: 50px;
     width: 50%;
     color: var(--secondary-color);
-    background-color: var(--transparent-color);
+    background-color: transparent;
     display: flex;
     justify-content: flex-end;
 }
@@ -228,6 +228,23 @@ header nav .form i {
 .landing .text .content{
   max-width: 500px;
 }
+.landing .text .content .btn{
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition:all var(--main-transition);
+  cursor: pointer;
+}
+.landing .text .content .btn:hover{
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+
 @media (max-width:767px) {
   .landing .text{
     width: 100%;
@@ -237,10 +254,10 @@ header nav .form i {
   }
 }
 .landing .text .content h2{
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  font-weight: normal;
+  font-weight: 500;
 }
 .landing .text .content P{
   font-size: .8rem;

@@ -9,6 +9,13 @@ const backdrop=document.querySelector('.backdrop');
  let sliderImges=[...document.querySelectorAll('.landing img')];
 //select the bulltes 
 let bullets=document.getElementById('bullets');
+//get numbers of sliderItems
+let sliderCount=sliderImges.length;
+//set currentSlide
+let currentSlide=1;
+//right and left Arrow
+let arrowRight=document.getElementById('arrow-right');
+let arrowLeft=document.getElementById('arrow-left');
 
 /*loop on lis and makte active class*/
 lis.forEach((a)=>{
@@ -28,7 +35,11 @@ form.onclick=()=>{
 /*menu nav bar*/
 menu.addEventListener('click',()=>{
     ulS.classList.toggle('openUl');
-    backdrop.style.display="block";
+    if(ulS.classList.contains('openUl')){
+        backdrop.style.display="block";
+    } else{
+        backdrop.style.display="none";
+    }
  })
  
  backdrop.onclick=function(){
@@ -37,14 +48,6 @@ menu.addEventListener('click',()=>{
 
 
  /*start work with change background image*/
-
-//get numbers of sliderItems
-let sliderCount=sliderImges.length;
-//set currentSlide
-let currentSlide=1;
-//right and left Arrow
-let arrowRight=document.getElementById('arrow-right');
-let arrowLeft=document.getElementById('arrow-left');
 //handle with arrowBtns
 arrowLeft.onclick=previouseSlide;
 arrowRight.onclick=nextslide;
