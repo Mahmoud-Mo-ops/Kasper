@@ -1,4 +1,6 @@
 /*main varaibles*/
+
+
 const lis=[...document.querySelectorAll('header nav ul li a')];
 const input=document.querySelector('input');
 const form=document.querySelector('.form i');
@@ -121,3 +123,17 @@ function removeAllActivce(){
 }
  /*end work with change background Image*/
 
+/*start with log in*/
+let popUp=document.querySelector('#form')
+let ButtonPopUp=document.querySelector('.btn');
+let cxlBtn=document.querySelector('.cancelbtn')
+function zoom(){
+    popUp.classList.toggle('zoom');
+}
+cxlBtn.addEventListener('click',()=>{
+    zoom()
+})
+ButtonPopUp.addEventListener("click",function(){
+    zoom()
+})
+/*end with log in*/
