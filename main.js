@@ -7,6 +7,9 @@ const form=document.querySelector('.form i');
 const menu=document.querySelector('.toggle-menu');
 const ulS=document.querySelector('nav ul');
 const backdrop=document.querySelector('.backdrop');
+let popUp=document.querySelector('#form')
+let ButtonPopUp=document.querySelector('.btn');
+let cxlBtn=document.querySelector('.cancelbtn')
  //get slider Items
  let sliderImges=[...document.querySelectorAll('.landing img')];
 //select the bulltes 
@@ -122,11 +125,7 @@ function removeAllActivce(){
      })
 }
  /*end work with change background Image*/
-
 /*start with log in*/
-let popUp=document.querySelector('#form')
-let ButtonPopUp=document.querySelector('.btn');
-let cxlBtn=document.querySelector('.cancelbtn')
 function zoom(){
     popUp.classList.toggle('zoom');
 }
@@ -137,3 +136,5 @@ ButtonPopUp.addEventListener("click",function(){
     zoom()
 })
 /*end with log in*/
+/*start with design section*/
+// end with design section
