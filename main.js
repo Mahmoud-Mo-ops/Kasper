@@ -1,6 +1,4 @@
 /*main varaibles*/
-
-
 const lis=[...document.querySelectorAll('header nav ul li a')];
 const input=document.querySelector('input');
 const form=document.querySelector('.form i');
@@ -163,11 +161,12 @@ shuffleLis.forEach((li)=>{
 })
 // end with design section
 //start with static//
+
 let numbers=[...document.querySelectorAll('.number')];
 let stats=document.querySelector('.stats');
 let start=false;
 window.onscroll=()=> {
-    if(window.scrollY >= stats.offsetTop-100){
+    if(window.scrollY >= stats.offsetTop-500){
         if(!start){
             numbers.forEach((ele)=>{
                 let goal=ele.dataset.goal;
@@ -185,3 +184,33 @@ window.onscroll=()=> {
 }
 
 //end with static//
+//work with skills//
+let skills=document.querySelector('.our-skills');
+let progress=Array.from(document.querySelectorAll('.prog span'));
+
+window.addEventListener('scroll',skillsScroll)
+
+
+    function skillsScroll(){
+        if(window.scrollY >= skills.offsetTop){
+            progress.forEach((prog)=>{
+                prog.style.width=prog.dataset.progress;
+                prog.style.transition="2s ease-in-out";
+            })
+    }
+}
+
+
+//wor with bulltes
+let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
+bulltesSkills.forEach((bullet)=>{
+  bullet.addEventListener(('click'),()=>{
+    bulltesSkills.forEach((bullet)=>{
+        bullet.style.backgroundColor="transparent"
+    })
+    bullet.style.backgroundColor=bullet.dataset.color;
+    progress.forEach((prog)=>{
+        prog.style.backgroundColor=bullet.dataset.color;
+    })
+  })
+})

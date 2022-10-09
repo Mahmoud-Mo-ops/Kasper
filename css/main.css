@@ -17,7 +17,8 @@
   }
   html {
     scroll-behavior: smooth;
-  overflow-x: hidden;
+    overflow-x: hidden;
+    height: 10000px;
   }
   body {
     font-family: "Open Sans", sans-serif;
@@ -775,3 +776,136 @@ font-weight: normal;
  .stats .container .box p{
   font-size: 0.8rem;
     }
+/* start skills */
+.our-skills{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+
+}
+.our-skills .container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container .testimonials{
+
+}
+
+@media (min-width:992px) {
+  .our-skills .container > div{
+  flex-basis: 45%;
+}
+}
+.our-skills .container > div > h3{
+  margin: 0 0 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.our-skills .container > div > p{
+  color: var(--transparent-color);
+  margin-bottom: 60px;
+  text-align: center;
+  line-height: 2;
+}
+.container .testimonials .content{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.container .testimonials .content img{
+   width: 100px;
+   aspect-ratio: 1;
+   border-radius: 50%;
+   margin-right: 60px;
+}
+@media (max-width:767px) {
+  .container .testimonials .content{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .container .testimonials .content img{
+    margin: 0 auto 20px;
+  }
+}
+.container .testimonials .content .text{
+  line-height: 1.8;
+  border-bottom: 1px solid #ccc;
+}
+
+.container .testimonials .content .text p{
+  color: var(--transparent-color);
+  font-weight: normal;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.container .testimonials .bullets{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.container .testimonials .bullets li{
+  margin:auto 8px;
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.container .testimonials .bullets .active{
+  background-color: var(--main-color);
+}
+.container .prog-holder{
+  margin: 15px 0;
+}
+.container .prog-holder h4{
+  font-weight: 505;
+  padding-bottom: 10px;
+  color: #777;
+}
+
+.container .prog-holder > div{
+  height: 25px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  position: relative;
+}
+.container .prog-holder > div span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color:var(--main-color);
+  display: block;
+  height: 100%;
+}
+.container .prog-holder > div span::before{
+  content:attr(data-progress);
+  color: var(--secondary-color);
+  top: -25px;
+  left: 95%;
+  height: 20px;
+  width: 35px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: .9rem;
+  background-color: #000;
+  position: absolute;
+}
+.container .prog-holder > div span::after{
+  Content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  left: 96.5%;
+  height: 25px;
+  border-style: solid;
+  border-width: 9px;
+  border-color: #000 transparent transparent transparent;
+}
+/* end skills */
