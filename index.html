@@ -46,7 +46,7 @@
       <div class="landing">
         <img src="images/landing.jpg" alt="">
         <img src="images/landing2.jpg"  alt="">
-        <img src="images/landing2.png!bw340" alt="">
+        <img src="images/landing2.png!bw340.jpg" alt="">
         <div class="overlay"></div>
         <div class="text">
           <div class="content">
@@ -173,60 +173,60 @@
           </p>
         </div>
         <ul class="shuffle">
-          <li class="active">All</li>
-          <li>App</li>
-          <li>Photo</li>
-          <li>Web</li>
-          <li>Print</li>
+          <li class="active" data-cont="all">All</li>
+          <li data-cont="app">App</li>
+          <li data-cont="photo">Photo</li>
+          <li data-cont="web">Web</li>
+          <li data-cont="print">Print</li>
         </ul>
       </div>
       <div class="imgs-container">
-        <div class="box">
+        <div class="box" data-cont="app" >
           <img src="images/porto1.jpg" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
           </div>
         </div>
-        <div class="box">
+        <div class="box app" data-cont="app">
           <img src="images/porto2.gif" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
 
           </div>
         </div>
-        <div class="box">
+        <div class="box photo" data-cont="photo">
           <img src="images/porto3.jpg" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
 
           </div>
         </div>
-        <div class="box">
+        <div class="box web" data-cont="web">
           <img src="images/porto4.jpg" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
 
           </div>
         </div>
-        <div class="box">
+        <div class="box photo" data-cont="photo">
           <img src="images/porto5.jpg" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
           </div>
         </div>
-        <div class="box">
+        <div class="box web"data-cont="web" >
           <img src="images/porto6.png" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
           </div>
         </div>
-        <div class="box">
+        <div class="box print"data-cont="print">
           <img src="images/porto7.jpg" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
           </div>
         </div>
-        <div class="box">
+        <div class="box print"data-cont="print">
           <img src="images/porto8.png" alt="" />
           <div class="caption">
             <a href="#" class="check">check</a>
@@ -235,8 +235,60 @@
       </div>
       <a href="#" class="more">More</a>
     </div>
-
     <!-- end Portfolio -->
+    <!-- End Portfolio -->
+    <!-- Start Video -->
+    <div class="video">
+      <video autoplay muted loop>
+        <source src="images/30 Second Demo.mp4" type="video/mp4" />
+      </video>
+      <div class="text">
+        <h2>How to make a team!</h2>
+        <p>Its All You Need</p>
+        <button class="videoBtn">See More</button>
+      </div>
+    </div>
+    <!-- End Video -->
+     <!-- Start About -->
+     <div class="about">
+      <div class="container">
+        <div class="main-heading">
+          <h2>About Us</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+            tincidunt.
+          </p>
+        </div>
+        <img src="images/about.avif" alt="" />
+      </div>
+    </div>
+    <!-- End About -->
+    <!-- Start Stats -->
+    <div class="stats">
+      <div class="container">
+        <div class="box">
+          <i class="fas fa-mug-hot"></i>
+          <div class="number" data-goal="500">10</div>
+          <p>Coffee Drinks</p>
+        </div>
+        <div class="box">
+          <i class="far fa-folder"></i>
+          <div class="number" data-goal="400">20</div>
+          <p>Completed Projects</p>
+        </div>
+        <div class="box">
+          <i class="far fa-envelope"></i>
+          <div class="number" data-goal="300">50</div>
+          <p>Mail Sent</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-trophy"></i>
+          <div class="number" data-goal="500">30</div>
+          <p>Awards Received</p>
+        </div>
+      </div>
+    </div>
+    <!-- End Stats -->
       <script src="main.js"></script>
 </body>
 </html>

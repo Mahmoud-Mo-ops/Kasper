@@ -137,4 +137,51 @@ ButtonPopUp.addEventListener("click",function(){
 })
 /*end with log in*/
 /*start with design section*/
+let shuffleLis=Array.from(document.querySelectorAll('.shuffle li'));
+let boxs=Array.from(document.querySelectorAll('.box'));
+shuffleLis.forEach((li)=>{
+    li.addEventListener('click',(e)=>{
+        shuffleLis.forEach((li)=>{
+            li.classList.remove('active');
+        });
+        e.currentTarget.classList.add('active');
+        boxs.forEach((box)=>{
+            if(e.currentTarget.dataset.cont==box.dataset.cont){
+                box.style.scale="1";
+                box.style.transition=".8s"
+            } else if (e.currentTarget.dataset.cont==="all"){
+                box.style.scale="1"
+                box.style.transition=".8s"
+            }
+            else{
+                box.style.scale="0";
+                box.style.transition=".8s"
+            }
+        });
+
+    })
+})
 // end with design section
+//start with static//
+let numbers=[...document.querySelectorAll('.number')];
+let stats=document.querySelector('.stats');
+let start=false;
+window.onscroll=()=> {
+    if(window.scrollY >= stats.offsetTop-100){
+        if(!start){
+            numbers.forEach((ele)=>{
+                let goal=ele.dataset.goal;
+                let count=setInterval(()=>{
+                ele.textContent++
+                if(ele.textContent == goal){
+                clearInterval(count)
+            }
+            },6000/goal)
+            })   
+        }
+        start=true;
+        
+     }
+}
+
+//end with static//
