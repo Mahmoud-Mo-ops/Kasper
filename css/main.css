@@ -18,7 +18,6 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    height: 10000px;
   }
   body {
     font-family: "Open Sans", sans-serif;
@@ -274,7 +273,7 @@ header nav .form i {
   background-color: var(--main-color);
   color: var(--secondary-color);
   width: 100px;
-  height: 40px;
+  aspect-ratio: 1/.25;
   border: none;
   outline: none;
   border-radius: 10px;
@@ -909,3 +908,39 @@ font-weight: normal;
   border-color: #000 transparent transparent transparent;
 }
 /* end skills */
+/* start Quote */
+.quotes{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: linear-gradient( rgba(0, 0, 0, 0.3) 10%, transparent),
+  url("../images/Quate.jpg") center/cover no-repeat border-box,
+  #000;
+}
+.container{
+   position: relative;
+   color: var(--secondary-color);
+   text-align: center;
+  
+}
+
+ .container q {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.container q::before {
+  font-family:"Font Awesome 5 Free";
+  content: "\22";
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color:rgb(0 255 0 );
+}
+.container q::after {
+  font-family:"Font Awesome 5 Free";
+  content: "\22";
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color:rgb(0 255 0 );
+}
+
+/* end Quote */
