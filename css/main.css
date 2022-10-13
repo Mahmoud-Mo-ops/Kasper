@@ -14,6 +14,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color: #000;
+    text-decoration: none;
   }
   html {
     scroll-behavior: smooth;
@@ -61,6 +63,7 @@
   position: relative;
   margin-bottom: 70px;
   text-transform: uppercase;
+  color: #000;
 }
 .main-heading h2::before {
   content: "";
@@ -787,10 +790,6 @@ font-weight: normal;
   justify-content: space-between;
 }
 
-.container .testimonials{
-
-}
-
 @media (min-width:992px) {
   .our-skills .container > div{
   flex-basis: 45%;
@@ -816,6 +815,7 @@ font-weight: normal;
 .container .testimonials .content img{
    width: 100px;
    aspect-ratio: 1;
+   object-fit: cover;
    border-radius: 50%;
    margin-right: 60px;
 }
@@ -832,6 +832,7 @@ font-weight: normal;
 .container .testimonials .content .text{
   line-height: 1.8;
   border-bottom: 1px solid #ccc;
+  color: #777;
 }
 
 .container .testimonials .content .text p{
@@ -866,6 +867,8 @@ font-weight: normal;
   font-weight: 505;
   padding-bottom: 10px;
   color: #777;
+  text-align: left;
+  margin-left: 5px;
 }
 
 .container .prog-holder > div{
@@ -944,3 +947,102 @@ font-weight: normal;
 }
 
 /* end Quote */
+/*start price*/
+.pricing{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.pricing .container .plans{
+  display: grid;
+grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+ gap: 30px;
+}
+
+.pricing .container .plans .plan{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.pricing .container .plans .plan .head{
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+}
+.pricing .container .plans .plan .head h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.pricing .container .plans .plan .head span{
+  font-size: 3.5rem;
+    font-weight: bold;
+}
+.pricing .container .plans .plan ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 350px;
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .container .plans .plan ul li:not(:last-child){
+  position: relative;
+ 
+}
+
+.pricing .container .plans .plan ul li:not(:last-child)::after{
+  content: "";
+  width: 140px;
+  height: 1px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+}
+.pricing .container .plans .foot{
+  padding: 40px 10px;
+  }
+.pricing .container .plans .foot a{
+  border: 1px solid var(--main-color);
+  padding: 10px 20px;
+  box-shadow: 5px -2px 14px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 5px -2px 14px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px -2px 14px -5px rgba(0,0,0,0.75);
+}
+
+.pricing .contact-text{
+  text-align: center;
+  margin: 50px auto 20px;
+  font-size: 20px;
+}
+.pricing .contact-link {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  overflow: hidden;
+}
+.contact-link span{
+  position: absolute;
+  top: 0;
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100%;
+  left: -136px;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing .contact-link:hover span{
+  left: 0;
+}
+.pricing .contact-link:hover{
+  color: var(--secondary-color);
+}
+/*end price*/
