@@ -165,7 +165,7 @@ shuffleLis.forEach((li)=>{
 let numbers=[...document.querySelectorAll('.number')];
 let stats=document.querySelector('.stats');
 let start=false;
-window.onscroll=()=> {
+function count(){
     if(window.scrollY >= stats.offsetTop-500){
         if(!start){
             numbers.forEach((ele)=>{
@@ -182,6 +182,10 @@ window.onscroll=()=> {
         
      }
 }
+window.onscroll=()=> {
+    count()
+    scrollUp()
+ }
 
 //end with static//
 //work with skills//
@@ -200,7 +204,6 @@ window.addEventListener('scroll',skillsScroll)
     }
 }
 
-
 //wor with bulltes
 let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
 bulltesSkills.forEach((bullet)=>{
@@ -214,3 +217,21 @@ bulltesSkills.forEach((bullet)=>{
     })
   })
 })
+
+/*start with up*/
+let jump=document.querySelector('.up');
+
+window.addEventListener('load',scrollUp)
+function scrollUp(){
+    if(window.scrollY >= 45){
+        jump.style.display="block";
+    } else{
+        jump.style.display="none";
+    }
+    jump.addEventListener(('click'),()=>{
+        window.scrollTo({
+            top:0,
+            left:0,
+        })
+    })
+}

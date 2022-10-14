@@ -14,7 +14,6 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #000;
     text-decoration: none;
   }
   html {
@@ -782,8 +781,7 @@ font-weight: normal;
 .our-skills{
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
-
-}
+  }
 .our-skills .container{
   display: flex;
   flex-wrap: wrap;
@@ -800,6 +798,7 @@ font-weight: normal;
   text-align: center;
   text-transform: uppercase;
   font-weight: normal;
+  color: #000;
 }
 .our-skills .container > div > p{
   color: var(--transparent-color);
@@ -925,11 +924,11 @@ font-weight: normal;
    text-align: center;
   
 }
-
  .container q {
   display: block;
   margin-bottom: 20px;
   font-size: 1.2rem;
+  color: var(--secondary-color);
 }
 .container q::before {
   font-family:"Font Awesome 5 Free";
@@ -951,11 +950,13 @@ font-weight: normal;
 .pricing{
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+  
 }
 .pricing .container .plans{
   display: grid;
 grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
  gap: 30px;
+ color: #000;
 }
 
 .pricing .container .plans .plan{
@@ -984,6 +985,7 @@ grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   align-items: center;
   height: 350px;
   border-bottom: 1px solid var(--main-color);
+  color: #777;
 }
 .pricing .container .plans .plan ul li:not(:last-child){
   position: relative;
@@ -1046,3 +1048,94 @@ grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   color: var(--secondary-color);
 }
 /*end price*/
+/*start with up*/
+.up{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:var(--main-color);
+  width: 35px;
+  aspect-ratio: 1/1;
+  display: none;
+  cursor: pointer;
+}
+.up i{
+  width: 100%;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px;
+}
+/*end with up*/
+/*start subscribe*/
+.subscribe{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: linear-gradient( rgba(0, 0, 0, 0.5) 10%, transparent) ,url("../images/subscribe.jpg") center/cover no-repeat border-box;
+  
+}
+.subscribe .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width:767px) {
+ .subscribe .container{
+  flex-direction: row;
+  justify-content: space-between;
+ }
+}
+
+.subscribe .container form{
+  display: flex; 
+  width: 500px;
+  max-width: 100%;
+  position: relative;
+  flex-basis: 75%;
+}
+.subscribe .container form input[type=email]{
+background-color: none;
+background: none;
+border: 1px solid #fff;
+padding: 20px 20px 20px 50px;
+width: calc(100% - 130px);
+color: aliceblue;
+caret-color: var(--main-color);
+}
+.subscribe .container form i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 25px;
+}
+.subscribe .container form input[type=submit]{
+  width: 130px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-left: none;
+  text-transform: uppercase;
+}
+.subscribe form input[type="email"]:focus,
+.subscribe form input[type="submit"]:focus {
+  outline: none;
+}
+.subscribe form ::placeholder {
+  color: white;
+
+}
+  .subscribe .container p{
+  line-height: 2;
+  margin:20px auto;
+}
+@media (min-width:767px) {
+  .subscribe .container p{
+    line-height: 2;
+    margin-left:50px;
+  }
+ }
+ 
+/*end subscribe*/
