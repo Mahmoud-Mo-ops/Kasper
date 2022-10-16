@@ -954,20 +954,30 @@ font-weight: normal;
 }
 .pricing .container .plans{
   display: grid;
-grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
- gap: 30px;
- color: #000;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 30px;
+  color: #000;
 }
 
 .pricing .container .plans .plan{
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: var(--main-color);
+  box-shadow: 5px -2px 1px  #50d6fb;
+  cursor: pointer;
+  transition: box-shadow var(--main-transition);
+}
+.pricing .container .plans .plan:hover{
+  box-shadow:5px -4px 1px #333;
+}
+.pricing .container .plans .special{
+  background-color:#50d6fb;
 }
 .pricing .container .plans .plan .head{
   padding: 40px 20px;
-  border-bottom: 1px solid var(--main-color);
-  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid #777;
+  border-top: 1px solid #777;
 }
 .pricing .container .plans .plan .head h3 {
   font-weight: normal;
@@ -996,7 +1006,7 @@ grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   content: "";
   width: 140px;
   height: 1px;
-  background-color: var(--main-color);
+  background-color: #777;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
