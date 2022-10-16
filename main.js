@@ -182,27 +182,39 @@ function count(){
         
      }
 }
-window.onscroll=()=> {
-    count()
-    scrollUp()
- }
-
 //end with static//
 //work with skills//
 let skills=document.querySelector('.our-skills');
 let progress=Array.from(document.querySelectorAll('.prog span'));
-
-window.addEventListener('scroll',skillsScroll)
-
-
     function skillsScroll(){
-        if(window.scrollY >= skills.offsetTop){
+        if(window.scrollY >= skills.offsetTop-20){
             progress.forEach((prog)=>{
                 prog.style.width=prog.dataset.progress;
                 prog.style.transition="2s ease-in-out";
             })
     }
 }
+/*start with up*/
+let jump=document.querySelector('.up');
+function scrollUp(){
+    if(window.scrollY >= 45){
+        jump.style.display="block";
+    } else{
+        jump.style.display="none";
+    }
+    jump.addEventListener(('click'),()=>{
+        window.scrollTo({
+            top:0,
+            left:0,
+        })
+    })
+}
+
+window.onscroll=()=> {
+    count();
+    scrollUp();
+    skillsScroll();
+ }
 
 //wor with bulltes
 let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
@@ -217,21 +229,26 @@ bulltesSkills.forEach((bullet)=>{
     })
   })
 })
+/*dark mode*/
+let  moon=document.querySelector('.fa-moon');
+let body=document.querySelector('body');
+const link=document.createElement('link');
+link.rel="stylesheet";
+document.getElementsByTagName('HEAD')[0].appendChild(link)
+moon.addEventListener('click',()=>{
+    console.log("u")
+    if(moon.classList.contains("fa-moon")){
+        //toggle between sun and moon
+        moon.classList.remove("fa-moon");
+        moon.classList.add("fa-sun");
+        link.href='./css/dark.css';
 
-/*start with up*/
-let jump=document.querySelector('.up');
-
-window.addEventListener('load',scrollUp)
-function scrollUp(){
-    if(window.scrollY >= 45){
-        jump.style.display="block";
     } else{
-        jump.style.display="none";
+       //toggle between sun and moon
+        moon.classList.remove("fa-sun");
+        moon.classList.add("fa-moon");
+        link.href='./css/main.css';
     }
-    jump.addEventListener(('click'),()=>{
-        window.scrollTo({
-            top:0,
-            left:0,
-        })
-    })
-}
+  
+})
+

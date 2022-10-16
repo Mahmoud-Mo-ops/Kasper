@@ -132,7 +132,13 @@ header .container::after{
 header .container .logo img{
   height: 40px;
 }
-
+ .container i{
+  font-size: 1.5rem;
+  color: #fff;
+  margin-left: 10px;
+  padding-top: 5px;
+  cursor: pointer;
+}
 header nav{
   flex: 1;
   display: flex;
@@ -1061,6 +1067,7 @@ font-weight: normal;
 /*start with up*/
 .up{
   position: fixed;
+  z-index: 5;
   bottom: 20px;
   right: 20px;
   background-color:var(--main-color);
