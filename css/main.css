@@ -1149,3 +1149,83 @@ caret-color: var(--main-color);
  }
  
 /*end subscribe*/
+/*start contact*/
+.contact{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.contact .container .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.contact .container .content form{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
+}
+@media (min-width:767px) {
+  .contact .container .content{ 
+    flex-direction: row;
+  }
+}
+.contact .container .content form .main-input{
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  width: 100%;
+  min-width: 250px;
+}
+.contact .container .content form .main-input:focus{
+ outline: none;
+}
+
+.contact .container .content form textarea{
+  aspect-ratio: 1/.25;
+}
+.contact .container .content form input[type=submit]{
+  background-color: var(--main-color);
+  border: none;
+  padding: 15px;
+  color: var(--secondary-color);
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact .container .content form input[type=submit]:hover{
+  background-color: #0fb5e3;
+}
+.contact .container .info {
+  flex-basis: 20%;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  order: -1;
+}
+@media (min-width:767px) {
+  .contact .container .info {
+   margin-bottom: 0;
+   order: 1;
+  }
+}
+.contact .container .info h4{
+  margin-bottom: 23px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.contact .container .info h4:nth-of-type(2){
+ margin-top: 58px;
+}
+.contact .container .info h4 ~ span{
+  margin-bottom: 4px;
+  color: #777;
+}
+.contact .container .info address{
+  color: #777;
+  line-height: 2;
+}
+/*end contact*/
