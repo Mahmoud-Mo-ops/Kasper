@@ -3,3 +3,11 @@ body{
     font-weight: bold;
     transition: all 1s;
 }
+.main-heading h2,
+.our-skills .container > div > h3,
+.contact .container .info h4 {
+    color: #fff;
+}
+.container .testimonials .bullets li{
+    border: 1px solid #fff;
+}

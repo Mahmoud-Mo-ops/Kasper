@@ -218,12 +218,28 @@ window.onscroll=()=> {
 
 //wor with bulltes
 let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
+
+if(window.localStorage.getItem('backgroundColorBullet')){
+    progress.forEach((prog)=>{
+        prog.style.backgroundColor=window.localStorage.getItem('backgroundColorBullet');
+    })
+    bulltesSkills.forEach((bullet)=>{
+        bullet.style.backgroundColor="transparent";
+        bulltesSkills.forEach((bullet)=>{
+            if(bullet.dataset.color==window.localStorage.getItem("backgroundColorBullet")){
+                bullet.style.backgroundColor=window.localStorage.getItem("backgroundColorBullet")
+
+            }
+        })
+          })        
+}
 bulltesSkills.forEach((bullet)=>{
   bullet.addEventListener(('click'),()=>{
     bulltesSkills.forEach((bullet)=>{
-        bullet.style.backgroundColor="transparent"
+        bullet.style.backgroundColor="transparent";
     })
     bullet.style.backgroundColor=bullet.dataset.color;
+    window.localStorage.setItem('backgroundColorBullet',bullet.dataset.color)
     progress.forEach((prog)=>{
         prog.style.backgroundColor=bullet.dataset.color;
     })
@@ -232,23 +248,31 @@ bulltesSkills.forEach((bullet)=>{
 /*dark mode*/
 let  moon=document.querySelector('.fa-moon');
 let body=document.querySelector('body');
+//add dark style sheet
 const link=document.createElement('link');
 link.rel="stylesheet";
-document.getElementsByTagName('HEAD')[0].appendChild(link)
-moon.addEventListener('click',()=>{
-    console.log("u")
-    if(moon.classList.contains("fa-moon")){
-        //toggle between sun and moon
-        moon.classList.remove("fa-moon");
-        moon.classList.add("fa-sun");
-        link.href='./css/dark.css';
-
+document.getElementsByTagName('HEAD')[0].appendChild(link);
+//if dark mode doesnt exist in local storage .creat it .false by default
+if(localStorage.getItem('darkMode')===null){
+    localStorage.setItem('darkMode',"false");
+}
+checkStatus();
+function checkStatus(){
+    if(localStorage.getItem('darkMode')==="true"){
+        link.href='./css/dark.css';   
     } else{
-       //toggle between sun and moon
-        moon.classList.remove("fa-sun");
-        moon.classList.add("fa-moon");
-        link.href='./css/main.css';
+        link.href='';
     }
-  
-})
+}
+function toggleMode(){
+    if(localStorage.getItem('darkMode')==="true"){
+        localStorage.setItem('darkMode',"false");
+        link.href='';
+} else{
+    moon.classList.remove("fa-moon");
+    moon.classList.add("fa-sun");
+    localStorage.setItem('darkMode',"true");
+    link.href='./css/dark.css';
+}
+}
 
