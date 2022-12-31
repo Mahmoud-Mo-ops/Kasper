@@ -182,20 +182,46 @@ function count(){
         
      }
 }
+window.onscroll=()=> {
+    count()
+    scrollUp()
+ }
+
 //end with static//
 //work with skills//
 let skills=document.querySelector('.our-skills');
 let progress=Array.from(document.querySelectorAll('.prog span'));
+
+window.addEventListener('scroll',skillsScroll)
+
+
     function skillsScroll(){
-        if(window.scrollY >= skills.offsetTop-20){
+        if(window.scrollY >= skills.offsetTop){
             progress.forEach((prog)=>{
                 prog.style.width=prog.dataset.progress;
                 prog.style.transition="2s ease-in-out";
             })
     }
 }
+
+//wor with bulltes
+let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
+bulltesSkills.forEach((bullet)=>{
+  bullet.addEventListener(('click'),()=>{
+    bulltesSkills.forEach((bullet)=>{
+        bullet.style.backgroundColor="transparent"
+    })
+    bullet.style.backgroundColor=bullet.dataset.color;
+    progress.forEach((prog)=>{
+        prog.style.backgroundColor=bullet.dataset.color;
+    })
+  })
+})
+
 /*start with up*/
 let jump=document.querySelector('.up');
+
+window.addEventListener('load',scrollUp)
 function scrollUp(){
     if(window.scrollY >= 45){
         jump.style.display="block";
@@ -209,70 +235,3 @@ function scrollUp(){
         })
     })
 }
-
-window.onscroll=()=> {
-    count();
-    scrollUp();
-    skillsScroll();
- }
-
-//wor with bulltes
-let bulltesSkills=[...document.querySelectorAll('.content ~ .bullets >li')];
-
-if(window.localStorage.getItem('backgroundColorBullet')){
-    progress.forEach((prog)=>{
-        prog.style.backgroundColor=window.localStorage.getItem('backgroundColorBullet');
-    })
-    bulltesSkills.forEach((bullet)=>{
-        bullet.style.backgroundColor="transparent";
-        bulltesSkills.forEach((bullet)=>{
-            if(bullet.dataset.color==window.localStorage.getItem("backgroundColorBullet")){
-                bullet.style.backgroundColor=window.localStorage.getItem("backgroundColorBullet")
-
-            }
-        })
-          })        
-}
-bulltesSkills.forEach((bullet)=>{
-  bullet.addEventListener(('click'),()=>{
-    bulltesSkills.forEach((bullet)=>{
-        bullet.style.backgroundColor="transparent";
-    })
-    bullet.style.backgroundColor=bullet.dataset.color;
-    window.localStorage.setItem('backgroundColorBullet',bullet.dataset.color)
-    progress.forEach((prog)=>{
-        prog.style.backgroundColor=bullet.dataset.color;
-    })
-  })
-})
-/*dark mode*/
-let  moon=document.querySelector('.fa-moon');
-let body=document.querySelector('body');
-//add dark style sheet
-const link=document.createElement('link');
-link.rel="stylesheet";
-document.getElementsByTagName('HEAD')[0].appendChild(link);
-//if dark mode doesnt exist in local storage .creat it .false by default
-if(localStorage.getItem('darkMode')===null){
-    localStorage.setItem('darkMode',"false");
-}
-checkStatus();
-function checkStatus(){
-    if(localStorage.getItem('darkMode')==="true"){
-        link.href='./css/dark.css';   
-    } else{
-        link.href='';
-    }
-}
-function toggleMode(){
-    if(localStorage.getItem('darkMode')==="true"){
-        localStorage.setItem('darkMode',"false");
-        link.href='';
-} else{
-    moon.classList.remove("fa-moon");
-    moon.classList.add("fa-sun");
-    localStorage.setItem('darkMode',"true");
-    link.href='./css/dark.css';
-}
-}
-
